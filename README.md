@@ -1,8 +1,7 @@
-<p align="center">
-  <img src="docs/media/pip.png" alt="Pip, Poke’s pigeon courier holding an envelope" width="200">
-</p>
-
-<h1 align="center">poke</h1>
+<h1 align="center">
+  <img src="docs/media/pip.png" alt="Pip, Poke’s pigeon courier holding an envelope" width="160"><br>
+  poke
+</h1>
 
 <p align="center">
   <strong>Send a message. Wake the right agent. Know what happened.</strong>
