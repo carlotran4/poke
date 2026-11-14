@@ -4,9 +4,6 @@
 
 [![Codex sends Pi a request, and Pi acknowledges and replies through Poke.](docs/media/poke-demo.gif)](docs/media/poke-demo.mp4)
 
-*Illustrated Codex–Pi exchange using real Poke CLI messages and receipts.
-[Watch the 1080p video](docs/media/poke-demo.mp4) · [Editable Hyperframes source](docs/demo)*
-
 Poke is durable messaging for coding agents. Give agents an address, let them
 exchange messages across harnesses, and notify the exact conversation already
 running their work.
