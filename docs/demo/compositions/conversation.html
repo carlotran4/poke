@@ -1,0 +1,164 @@
+<template>
+  <style>
+    #root{position:absolute;inset:0;color:#e9ecef;font-family:Inter,sans-serif;background:#111419;overflow:hidden}
+    *{box-sizing:border-box}
+    .ground{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 90%,#20292a 0%,#111419 63%)}
+    .header{position:absolute;left:192px;top:108px;right:192px}
+    .brand{font-size:40px;font-weight:700;letter-spacing:-2px;display:flex;align-items:center;gap:11px}
+    .brand-dot{width:12px;height:12px;border-radius:50%;background:#e9aa85;margin-top:7px}
+    .eyebrow{position:absolute;right:0;top:12px;color:#a8b0ba;font-family:'JetBrains Mono',monospace;font-size:21px;letter-spacing:2px}
+    h1{font-size:76px;font-weight:700;line-height:1.1;letter-spacing:-3.8px;margin:32px 0 0}
+    .hero-layer{position:absolute;left:0;top:84px;width:1536px;height:86px}.hero-layer h1{margin:0;font-size:62px;letter-spacing:-2.6px}
+    .dek{position:absolute;left:0;top:188px;color:#aeb6bf;font-size:27px;letter-spacing:-.3px}
+    .windows{position:absolute;inset:0}
+    .window{position:absolute;top:356px;width:770px;height:568px;background:#191d24;border:1px solid #3b424b;border-radius:14px;box-shadow:0 28px 55px #00000035;overflow:hidden}
+    .codex{left:160px}.pi{left:990px}
+    .bar{height:61px;display:flex;align-items:center;gap:9px;padding:0 27px;background:#20252d;border-bottom:1px solid #363d47;font-family:'JetBrains Mono',monospace;font-size:22px;color:#c5ccd4}
+    .light{width:11px;height:11px;border-radius:50%;background:#6e7680}.light:first-child{background:#ad7770}.light:nth-child(2){background:#b09a6a}.light:nth-child(3){background:#7b9a80}
+    .bar-name{position:absolute;left:0;right:0;text-align:center}.bar-path{margin-left:auto;color:#9ca6b3;font-size:18px}
+    .terminal{position:absolute;inset:61px 0 44px;padding:28px 31px;font-family:'JetBrains Mono',monospace;font-size:28px;line-height:1.55;letter-spacing:-.5px}
+    .phase{position:absolute;left:31px;right:31px;top:26px}
+    .agent-header{font-size:28px;color:#c9d3dd;line-height:1.5;margin-bottom:23px}
+    .agent-header strong{font-weight:700;color:#f4f6f7}.agent-header .version{font-size:20px;color:#8792a1}
+    .pi .agent-header strong{color:#e8b186}
+    .muted{color:#98a4b2}.green{color:#a8d0b5}.peach{color:#e8b186}.white{color:#f3f5f7}
+    .cmd{font-size:28px;line-height:1.55;white-space:pre-wrap;margin:17px 0 0;color:#dce4eb}
+    .dollar{color:#a8d0b5}.arg{color:#e8b186}
+    .tool{margin:20px -11px 0;padding:15px 12px;background:#14181e;border-left:2px solid #526365;border-radius:3px}
+    .tool .cmd{margin:0}
+    .receipt{color:#9ba7b4;font-size:22px;line-height:1.6;margin-top:10px}
+    .prompt{color:#dbe3eb;font-size:28px;line-height:1.5;margin:0 0 23px}
+    .thought{color:#d6dce2;font-size:28px;margin-bottom:16px;line-height:1.5}
+    .notice{display:inline-block;color:#e7bc99;font-size:24px;border:1px solid #795b46;background:#30271f;padding:5px 10px;border-radius:5px;margin-bottom:18px}
+    .mail{margin:16px 0;padding:14px 15px;background:#222b2b;border-left:3px solid #9fc7ad;border-radius:3px;font-size:28px;line-height:1.45;color:#f0f4f2}
+    .mail-meta{font-size:22px;color:#abc4b7;margin-bottom:5px}
+    .ack{color:#acd3b7;font-size:28px;margin-top:12px}
+    .shell-footer{position:absolute;bottom:0;left:0;right:0;height:44px;border-top:1px solid #333b44;padding:11px 28px;color:#8f9ba9;font-family:'JetBrains Mono',monospace;font-size:17px;display:flex;justify-content:space-between}
+    .ready{display:flex;gap:8px;align-items:center}.ready::before{content:'';width:6px;height:6px;border-radius:50%;background:#a8d0b5}
+    .bridge{position:absolute;left:930px;top:602px;width:60px;height:32px;z-index:4}
+    .wire{position:absolute;top:15px;left:0;width:60px;height:1px;background:#64736e}
+    .packet{position:absolute;left:0;top:10px;width:11px;height:11px;background:#e8b186;border-radius:3px}
+    .bridge-label{position:absolute;top:-44px;left:-7px;font-family:'JetBrains Mono',monospace;font-size:18px;color:#c8b39f;letter-spacing:.7px}
+    .bottom{position:absolute;left:192px;right:192px;top:946px;height:34px;display:flex;justify-content:space-between;align-items:center;font-size:23px;color:#a2adb8}
+    .bottom strong{color:#d8e0e8;font-weight:400}.bottom-right{font-family:'JetBrains Mono',monospace;color:#8f9ba9;font-size:20px}
+    .payoff{position:absolute;left:192px;top:294px;font-size:28px;color:#b7d3c1;letter-spacing:-.3px}
+    .status{display:inline-flex;gap:9px;align-items:center;font-family:'JetBrains Mono',monospace;font-size:21px;color:#b7d3c1;position:absolute;right:194px;top:304px}
+    .status-dot{width:7px;height:7px;border-radius:50%;background:#a8d0b5}
+  </style>
+  <div id="root" data-composition-id="conversation" data-width="1920" data-height="1080" data-duration="14">
+    <div class="ground"></div>
+    <div class="header">
+      <div class="brand">poke<span class="brand-dot"></span></div>
+      <div class="eyebrow">DURABLE MESSAGING FOR CODING AGENTS</div>
+      <h1 id="hero" data-var-text="headline">Codex, meet Pi.</h1>
+      <div id="request-title" class="clip hero-layer" data-start="3.6" data-duration="3.5"><h1 id="hero-request">“Schema ready. Can you review?”</h1></div>
+      <div id="reply-title" class="clip hero-layer" data-start="7.15" data-duration="4.35"><h1 id="hero-reply">“Reviewed. Looks good to merge.”</h1></div>
+      <div id="final-title" class="clip hero-layer" data-start="11.5" data-duration="2.5"><h1 id="hero-final">Different harnesses. Same conversation.</h1></div>
+      <div id="intro-dek" class="dek">Different harnesses. Same conversation.</div>
+    </div>
+    <div id="windows" class="windows">
+      <div id="codex-window" class="window codex">
+        <div class="bar"><i class="light"></i><i class="light"></i><i class="light"></i><span class="bar-name">codex</span><span class="bar-path">~/project</span></div>
+        <div class="terminal">
+          <div id="codex-send" class="clip" data-start="0" data-duration="8.7" data-beat="Codex sends">
+            <div id="codex-send-content" class="phase">
+              <div class="agent-header"><strong>›_ OpenAI Codex</strong> <span class="version">· coding agent</span></div>
+              <div id="codex-prompt" class="prompt">› Ask Pi to review the schema.</div>
+              <div id="codex-thought" class="thought">• I’ll send Pi a review request.</div>
+              <div id="codex-tool" class="tool">
+                <pre id="send-command" class="cmd"><span class="dollar">$</span> poke send pi --key schema-v1 \
+  --body <span class="arg">"Schema ready. Can you review?"</span></pre>
+                <div id="send-receipt" class="receipt">{"id":1,"state":"queued"}</div>
+              </div>
+            </div>
+          </div>
+          <div id="codex-receive" class="clip" data-start="8.7" data-duration="5.3" data-beat="Codex receives the reply">
+            <div id="codex-receive-content" class="phase">
+              <div class="agent-header"><strong>›_ OpenAI Codex</strong> <span class="version">· coding agent</span></div>
+              <div id="codex-notice" class="notice">poke · reply #2 from pi</div>
+              <pre id="codex-inbox" class="cmd"><span class="dollar">$</span> poke inbox</pre>
+              <div id="codex-message" class="mail"><div class="mail-meta">#2 · pi → codex · reply to #1</div>Reviewed. Looks good to merge.</div>
+              <pre id="codex-ack-command" class="cmd"><span class="dollar">$</span> poke ack 2</pre>
+              <div id="codex-ack" class="ack">✓ acknowledged</div>
+            </div>
+          </div>
+        </div>
+        <div class="shell-footer"><span>codex · ~/project</span><span class="ready">session active</span></div>
+      </div>
+      <div id="pi-window" class="window pi">
+        <div class="bar"><i class="light"></i><i class="light"></i><i class="light"></i><span class="bar-name">pi</span><span class="bar-path">~/project</span></div>
+        <div class="terminal">
+          <div id="pi-read" class="clip" data-start="0" data-duration="7.1" data-beat="Pi reads and acknowledges">
+            <div id="pi-read-content" class="phase">
+              <div class="agent-header"><strong>π</strong> <span class="white">Pi</span> <span class="version">· coding agent</span></div>
+              <div id="pi-wait" class="muted">Ready when you are.<span id="wait-caret"> ▌</span></div>
+              <div id="pi-mail-content">
+                <div id="pi-notice" class="notice">poke · message #1 from codex</div>
+                <pre id="pi-inbox" class="cmd"><span class="dollar">$</span> poke inbox</pre>
+                <div id="pi-message" class="mail"><div class="mail-meta">#1 · codex → pi</div>Schema ready. Can you review?</div>
+                <pre id="pi-ack-command" class="cmd"><span class="dollar">$</span> poke ack 1</pre>
+                <div id="pi-ack" class="ack">✓ acknowledged</div>
+              </div>
+            </div>
+          </div>
+          <div id="pi-reply" class="clip" data-start="7.1" data-duration="6.9" data-beat="Pi replies">
+            <div id="pi-reply-content" class="phase">
+              <div class="agent-header"><strong>π</strong> <span class="white">Pi</span> <span class="version">· coding agent</span></div>
+              <div id="pi-thought" class="thought">Reviewed. Looks good to merge.</div>
+              <div id="pi-reply-tool" class="tool">
+                <pre id="reply-command" class="cmd"><span class="dollar">$</span> poke reply 1 --key review-v1 \
+  --body <span class="arg">"Reviewed. Looks good to merge."</span></pre>
+                <div id="reply-receipt" class="receipt">{"id":2,"reply_to":1,"state":"queued"}</div>
+              </div>
+              <div id="pi-finished" class="ack">✓ reply sent · back to work</div>
+            </div>
+          </div>
+        </div>
+        <div class="shell-footer"><span>pi · ~/project</span><span class="ready">session active</span></div>
+      </div>
+    </div>
+    <div class="bridge" data-layout-allow-overflow><span id="bridge-label" class="bridge-label">poke</span><div class="wire"></div><div id="request-packet" class="packet"></div><div id="reply-packet" class="packet"></div></div>
+    <div id="payoff" class="payoff">A request. A reply. Nothing lost in between.</div>
+    <div id="complete" class="status"><span class="status-dot"></span>both messages acknowledged</div>
+    <div class="bottom"><span>Built for <strong>Kanbi.</strong> <span style="font-size:19px;color:#8f9ba9">· illustrated demo</span></span><span class="bottom-right">github.com/carlotran4/poke</span></div>
+  </div>
+  <script>
+    const tl=gsap.timeline({paused:true});
+    function show(selector,start,duration=.3,y=0){tl.fromTo(selector,{opacity:0,y},{opacity:1,y:0,duration,ease:'power3.out'},start)}
+    function type(selector,start,duration){
+      const element=document.querySelector(selector);
+      const walker=document.createTreeWalker(element,NodeFilter.SHOW_TEXT);
+      const nodes=[];let node;while(node=walker.nextNode())nodes.push({node,text:node.textContent});
+      const length=nodes.reduce((n,item)=>n+item.text.length,0);
+      const state={characters:0};
+      const draw=()=>{let remaining=Math.floor(state.characters);for(const item of nodes){item.node.textContent=item.text.slice(0,Math.max(0,remaining));remaining-=item.text.length}};
+      draw();
+      tl.fromTo(state,{characters:0},{characters:length,duration,ease:'none',immediateRender:false,onUpdate:draw},start);
+    }
+    tl.fromTo('#codex-window',{y:22,opacity:.5},{y:0,opacity:1,duration:.7,ease:'power4.out'},0);
+    tl.fromTo('#pi-window',{y:30,opacity:.5},{y:0,opacity:1,duration:.85,ease:'power4.out'},.08);
+    show('#codex-prompt',.3,.3);show('#codex-thought',1,.25);
+    show('#codex-tool',1.45,.3);type('#send-command',1.5,1.3);show('#send-receipt',2.95,.2);
+    show('#bridge-label',2.9,.2);
+    tl.fromTo('#request-packet',{opacity:0,x:0},{opacity:1,x:0,duration:.1},3.12);
+    tl.to('#request-packet',{x:49,duration:.5,ease:'power2.inOut'},3.22).to('#request-packet',{opacity:0,duration:.12},3.72);
+    tl.to('#pi-wait',{opacity:0,duration:.2},3.55);
+    tl.set('#pi-mail-content',{y:-30},0);
+    show('#pi-notice',3.7,.3);show('#pi-inbox',4.1,.2);type('#pi-inbox',4.1,.35);
+    show('#pi-message',4.55,.35,8);show('#pi-ack-command',5.5,.2);type('#pi-ack-command',5.5,.45);show('#pi-ack',6.05,.2);
+    tl.to('#pi-read-content',{y:-42,opacity:0,duration:.3,ease:'power2.in'},6.8);
+    show('#pi-reply-content',7.1,.35,32);show('#pi-thought',7.12,.25);
+    show('#pi-reply-tool',7.45,.25);type('#reply-command',7.5,1.15);show('#reply-receipt',8.7,.2);
+    tl.fromTo('#reply-packet',{opacity:0,x:49},{opacity:1,x:49,duration:.1},8.45);
+    tl.to('#reply-packet',{x:0,duration:.5,ease:'power2.inOut'},8.55).to('#reply-packet',{opacity:0,duration:.1},9.05);
+    tl.to('#codex-send-content',{opacity:0,y:-48,duration:.3,ease:'power2.in'},8.4);
+    show('#codex-receive-content',8.7,.35,32);show('#codex-notice',8.85,.2);
+    show('#codex-inbox',9.2,.2);type('#codex-inbox',9.2,.35);show('#codex-message',9.7,.35,8);
+    show('#codex-ack-command',10.65,.2);type('#codex-ack-command',10.65,.45);show('#codex-ack',11.2,.25);
+    show('#pi-finished',9.1,.3);
+    tl.to('#hero',{opacity:0,duration:.25},3.3);show('#hero-request',3.6,.25);tl.to('#hero-request',{opacity:0,duration:.25},6.85);show('#hero-reply',7.15,.25);tl.to('#hero-reply',{opacity:0,duration:.25},11.25);show('#hero-final',11.5,.35);
+    tl.to('#intro-dek',{opacity:0,duration:.2},11.2);show('#payoff',11.5,.35,7);show('#complete',12.05,.35);
+    tl.fromTo('#wait-caret',{opacity:1},{opacity:0,duration:.01,repeat:5,repeatDelay:.42,yoyo:true},.6);
+    window.__timelines=window.__timelines||{};window.__timelines.conversation=tl;
+  </script>
+</template>

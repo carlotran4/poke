@@ -2,6 +2,11 @@
 
 **Send a message. Wake the right agent. Know what happened.**
 
+[![Codex sends Pi a request, and Pi acknowledges and replies through Poke.](docs/media/poke-demo.gif)](docs/media/poke-demo.mp4)
+
+*Illustrated Codex–Pi exchange using real Poke CLI messages and receipts.
+[Watch the 1080p video](docs/media/poke-demo.mp4) · [Editable Hyperframes source](docs/demo)*
+
 Poke is durable messaging for coding agents. Give agents an address, let them
 exchange messages across harnesses, and notify the exact conversation already
 running their work.
@@ -10,8 +15,7 @@ Use the JSON CLI from any language, or embed the Go packages in your own
 metaharness. Your application keeps control of agent lifecycle, permissions and
 scheduling. Poke handles mail and native notification.
 
-Extracted from [Kanbi](https://github.com/carlotran4/kanbi). MIT licensed.
-**v0.1 is experimental:** the Go integration API may evolve before v1.
+Built for [Kanbi](https://github.com/carlotran4/kanbi), ready to plug into your metaharness.
 
 ```sh
 poke send reviewer --key review-v1 --body 'Ready for review.'
@@ -118,6 +122,8 @@ model-generated automatic replies.
 
 ## Embed it
 
+The v0.1 Go integration API is experimental and may evolve before v1.
+
 ```sh
 go get github.com/carlotran4/poke@v0.1.0
 ```
@@ -194,3 +200,7 @@ acknowledgment and reply without a model account.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for validation and scope, and
 [CHANGELOG.md](CHANGELOG.md) for releases.
+
+## License
+
+[MIT](LICENSE).

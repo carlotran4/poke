@@ -5,3 +5,6 @@
 *.db-wal
 *.db.lock
 *.db.messages/
+/docs/demo/node_modules/
+/docs/demo/.hyperframes/
+/docs/demo/renders/

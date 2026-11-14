@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" data-composition-variables='[{"id":"headline","type":"string","label":"Headline","default":"Codex, meet Pi."}]'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <title>Poke — Codex, meet Pi</title>
+  <script src="node_modules/gsap/dist/gsap.min.js"></script>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#111419}
+  </style>
+</head>
+<body>
+  <div id="main" data-composition-id="main" data-start="0" data-duration="14" data-width="1920" data-height="1080" data-fps="30">
+    <div id="conversation" class="clip" data-composition-id="conversation" data-composition-src="compositions/conversation.html" data-start="0" data-duration="14" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+  </div>
+  <script>window.__timelines=window.__timelines||{};window.__timelines.main=gsap.timeline({paused:true});</script>
+</body>
+</html>

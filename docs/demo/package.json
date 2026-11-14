@@ -1,0 +1,14 @@
+{
+  "name": "poke-readme-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "hyperframes check --json",
+    "preview": "hyperframes preview",
+    "render": "hyperframes render --quality delivery -o ../media/poke-demo.mp4"
+  },
+  "devDependencies": {
+    "gsap": "3.15.1",
+    "hyperframes": "0.9.46"
+  }
+}
