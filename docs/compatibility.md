@@ -48,3 +48,12 @@ by Herdr's `agent_not_ready` during startup before receiver registration; native
 Claude reception was not re-established in that environment. Socket framing and
 receipt behavior passed deterministic tests. No new authenticated Copilot reception
 claim is made.
+
+A follow-up authenticated Kanbi messaging run established the initial exchange,
+Codex draft preservation and Codex busy delivery, but timed out waiting for Pi to
+deliver after an 80x24 draft was cleared. The pre-extraction source also timed out
+waiting for Pi's initial read/ack/reply. These are partial/inconsistent native
+results; they do not establish a passing interactive Pi matrix or isolate the
+later draft timeout. Deterministic draft tests and standalone installed-engine
+offline wake passed. Treat interactive compatibility as an explicit integration
+check for your installed versions, rather than a universal guarantee.
