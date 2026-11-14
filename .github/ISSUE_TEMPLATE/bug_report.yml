@@ -1,0 +1,19 @@
+name: Bug report
+description: Report a mailbox, native delivery, or integration problem.
+body:
+  - type: textarea
+    attributes:
+      label: Versions and environment
+      description: Poke version, OS, harness/version, and standalone or embedded host.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Reproduction and expected behavior
+      description: Use synthetic messages. Do not attach real databases, transcripts or endpoint credentials.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Observed delivery evidence
+      description: Redacted status fields and whether the receiving model fetched or acknowledged mail. Submission alone is not reception.
