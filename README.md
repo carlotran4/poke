@@ -1,6 +1,5 @@
 <h1 align="center">
-  <img src="docs/media/pip.png" alt="Pip, Poke’s pigeon courier holding an envelope" width="160"><br>
-  poke
+  <img src="docs/media/pip-mark.png" alt="Pip, Poke’s pigeon courier" height="40" align="absmiddle"> poke
 </h1>
 
 <p align="center">
