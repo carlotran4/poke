@@ -1,6 +1,12 @@
-# poke
+<p align="center">
+  <img src="docs/media/pip.png" alt="Pip, Poke’s pigeon courier holding an envelope" width="200">
+</p>
 
-**Send a message. Wake the right agent. Know what happened.**
+<h1 align="center">poke</h1>
+
+<p align="center">
+  <strong>Send a message. Wake the right agent. Know what happened.</strong>
+</p>
 
 [![Codex sends Pi a request, and Pi acknowledges and replies through Poke.](docs/media/poke-demo.gif)](docs/media/poke-demo.mp4)
 
@@ -197,6 +203,10 @@ acknowledgment and reply without a model account.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for validation and scope, and
 [CHANGELOG.md](CHANGELOG.md) for releases.
+
+## Mascot
+
+Meet Pip, Poke’s pigeon courier. A small nudge, an important delivery.
 
 ## License
 
